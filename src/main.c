@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "generationCode.h"
+
 #include "param.h"
 #include "coeur.h"
+#include "generationCode.h"
 
 int main(int argc, char const *argv[])
 {
-    generationCode(4);
+    generationCode(3);
     return 0;
 }

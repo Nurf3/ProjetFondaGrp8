@@ -1,6 +1,6 @@
-#ifndef __PARAM__
-#define __PARAM__
+#ifndef __MODULE__
+#define __MODULE__
 
-const int choix = 4;
+const int choix = 3;
 
 #endif

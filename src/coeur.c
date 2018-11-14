@@ -1,4 +1,3 @@
-#include "src/param.h"
 #include "coeur.h"
 
 //

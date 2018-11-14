@@ -1,6 +1,6 @@
+#include "generationCode.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "generationCode.h"
 
 int generationCode(int choix)
 {
@@ -13,7 +13,7 @@ int generationCode(int choix)
     if (fichier != NULL)
     {
         //Ecriture dans le fichier les prototype puis fermeture du fichier
-        fprintf(fichier, "#ifndef __COEUR__\n#define __COEUR__\n\nconst int choix = %d;\n\n#endif", choix);
+        fprintf(fichier, "#ifndef __MODULE__\n#define __MODULE__\n\nconst int choix = %d;\n\n#endif", choix);
         fclose(fichier);
     }
 
