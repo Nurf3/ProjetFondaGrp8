@@ -5,14 +5,15 @@
 int coeurs = 1;
 //
 
+//Definition des 5 fonctions
+
 void coeur1()
 {
-    //
     for (int i = 2; i <= 11; i++)
     {
         pinMode(i, OUTPUT);
     }
-    //
+
     int i = 2;
 
     while (coeurs == 1)
@@ -31,12 +32,11 @@ void coeur1()
 
 void coeur2()
 {
-    //
     for (int i = 2; i <= 11; i++)
     {
         pinMode(i, OUTPUT);
     }
-    //
+
     int i = 2;
 
     while (coeurs == 1)
@@ -55,12 +55,11 @@ void coeur2()
 
 void coeur3()
 {
-    //
     for (int i = 2; i <= 11; i++)
     {
         pinMode(i, OUTPUT);
     }
-    //
+
     int i = 2;
 
     while (coeurs == 1)
@@ -79,8 +78,14 @@ void coeur3()
 
 void coeur4()
 {
+    for (int i = 2; i <= 11; i++)
+    {
+        pinMode(i, OUTPUT);
+    }
+
     int i = 2;
     int tour = 1;
+
     while (coeurs == 1)
     {
         if (tour == 1)
@@ -101,9 +106,15 @@ void coeur4()
 
 void coeur5()
 {
+    for (int i = 2; i <= 11; i++)
+    {
+        pinMode(i, OUTPUT);
+    }
+
     int i = 2;
     int j = 3;
     int tour = 1;
+
     while (coeurs == 1)
     {
         if (tour == 1)
