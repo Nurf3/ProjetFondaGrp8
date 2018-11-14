@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.cmake": "c",
+        "stdio.h": "c"
+    }
+}

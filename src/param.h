@@ -1,6 +1,7 @@
-#include "coeur.h"
+#ifndef COEUR
+#define COEUR
 
-#ifndef PARAM
-#define PARAM
+int allum();
+void coeur3();
 
 #endif

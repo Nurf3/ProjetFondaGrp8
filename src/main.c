@@ -1,18 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "cardio.h"
+#include "generationCode.c"
+#include "3.2.2/coeur.h"
+
 int main(int argc, char const *argv[])
 {
-    /* code */
+    generationCode(3);
     return 0;
-}
-
-void loop()
-{
-    /* code */
-}
-
-void setup()
-{
-    /* code */
 }
