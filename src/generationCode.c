@@ -5,6 +5,7 @@ int generationCode(int choix)
 {
     char *fonction[100];
     FILE *fichier = NULL;
+
     switch (choix)
     {
     case 1:
@@ -23,7 +24,17 @@ int generationCode(int choix)
         *fonction = "\nvoid coeur5();\n";
         break;
     }
+
     fichier = fopen("src/param.h", "w");
-    fprintf(fichier, "#ifndef COEUR\n#define COEUR\n%s\n#endif", *fonction);
-    fclose(fichier);
+
+    if (fichier != NULL)
+    {
+        fprintf(fichier, "#ifndef COEUR\n#define COEUR\n%s\n#endif", *fonction);
+        fclose(fichier);
+    }
+
+    else
+    {
+        printf("Impossible d'ouvrir le fichier param.h");
+    }
 }
