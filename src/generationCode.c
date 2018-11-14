@@ -9,19 +9,19 @@ int generationCode(int choix)
     switch (choix)
     {
     case 1:
-        *fonction = "\nint allum();\nvoid coeur1();\n";
+        *fonction = "int allum();\nvoid coeur1();";
         break;
     case 2:
-        *fonction = "\nint allum();\nvoid coeur2();\n";
+        *fonction = "int allum();\nvoid coeur2();";
         break;
     case 3:
-        *fonction = "\nint allum();\nvoid coeur3();\n";
+        *fonction = "int allum();\nvoid coeur3();";
         break;
     case 4:
-        *fonction = "\nvoid coeur4();\n";
+        *fonction = "void coeur4();";
         break;
     case 5:
-        *fonction = "\nvoid coeur5();\n";
+        *fonction = "void coeur5();";
         break;
     }
 
@@ -29,7 +29,7 @@ int generationCode(int choix)
 
     if (fichier != NULL)
     {
-        fprintf(fichier, "#ifndef COEUR\n#define COEUR\n%s\n#endif", *fonction);
+        fprintf(fichier, "#ifndef __COEUR__\n#define __COEUR__\n\n%s\n\n#endif", *fonction);
         fclose(fichier);
     }
 

@@ -1,3 +1,4 @@
+#include "src/param.h"
 #include "coeur.h"
 
 //
@@ -13,7 +14,19 @@ void coeur1()
     }
     //
     int i = 2;
-    allum(1, coeurs);
+
+    while (coeurs == 1)
+    {
+        if (i <= 11)
+        {
+            digitalWrite(i, HIGH);
+            i++;
+        }
+    }
+    for (int i = 2; i <= 11; i++)
+    {
+        digitalWrite(i, LOW);
+    }
 }
 
 void coeur2()
@@ -24,7 +37,20 @@ void coeur2()
         pinMode(i, OUTPUT);
     }
     //
-    allum(2, coeurs);
+    int i = 2;
+
+    while (coeurs == 1)
+    {
+        if (i <= 11)
+        {
+            digitalWrite(i, HIGH);
+            i += 2;
+        }
+    }
+    for (int i = 2; i <= 11; i++)
+    {
+        digitalWrite(i, LOW);
+    }
 }
 
 void coeur3()
@@ -35,12 +61,25 @@ void coeur3()
         pinMode(i, OUTPUT);
     }
     //
-    allum(3, coeurs);
+    int i = 2;
+
+    while (coeurs == 1)
+    {
+        if (i <= 11)
+        {
+            digitalWrite(i, HIGH);
+            i += 3;
+        }
+    }
+    for (int i = 2; i <= 11; i++)
+    {
+        digitalWrite(i, LOW);
+    }
 }
 
 void coeur4()
 {
-    int i = 0;
+    int i = 2;
     int tour = 1;
     while (coeurs == 1)
     {
@@ -81,23 +120,5 @@ void coeur5()
             }
         }
         tour = 1;
-    }
-}
-
-int allum(int Nombre, int coeurs)
-{
-    int i = 2;
-
-    while (coeurs == 1)
-    {
-        if (i <= 11)
-        {
-            digitalWrite(i, HIGH);
-            i += Nombre;
-        }
-    }
-    for (int i = 2; i <= 11; i++)
-    {
-        digitalWrite(i, LOW);
     }
 }

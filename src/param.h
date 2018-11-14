@@ -1,7 +1,6 @@
-#ifndef COEUR
-#define COEUR
+#ifndef __COEUR__
+#define __COEUR__
 
-int allum();
-void coeur3();
+void coeur5();
 
 #endif

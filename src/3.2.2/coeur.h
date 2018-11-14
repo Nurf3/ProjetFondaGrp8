@@ -1,5 +1,5 @@
-#ifndef COEUR
-#define COEUR
+#ifndef MODULECOEUR
+#define MODULECOEUR
 
 void coeur1();
 void coeur2();
