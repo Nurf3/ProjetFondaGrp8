@@ -1,6 +1,6 @@
 #ifndef __MODULE__
 #define __MODULE__
 
-const int choix = 3;
+const int utilisation = 3;
 
 #endif

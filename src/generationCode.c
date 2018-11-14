@@ -1,8 +1,13 @@
+//
+// Created by lucie on 14/11/2018.
+//
+
 #include "generationCode.h"
+#include "param.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-int generationCode(int choix)
+void generationCode(int choix)
 {
     FILE *fichier = NULL;
 
@@ -13,7 +18,7 @@ int generationCode(int choix)
     if (fichier != NULL)
     {
         //Ecriture dans le fichier les prototype puis fermeture du fichier
-        fprintf(fichier, "#ifndef __MODULE__\n#define __MODULE__\n\nconst int choix = %d;\n\n#endif", choix);
+        fprintf(fichier, "#ifndef __MODULE__\n#define __MODULE__\n\nconst int utilisation = %d;\n\n#endif", choix);
         fclose(fichier);
     }
 

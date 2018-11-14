@@ -1,7 +1,10 @@
-#ifndef __GENE__
-#define __GENE__
-#include "generationCode.c"
+//
+// Created by lucie on 14/11/2018.
+//
 
-int generationCode(int choix);
+#ifndef PROJETFONDAGRP8_GENERATIONCODE_H
+#define PROJETFONDAGRP8_GENERATIONCODE_H
 
-#endif
+void generationCode(int choix);
+
+#endif //PROJETFONDAGRP8_GENERATIONCODE_H

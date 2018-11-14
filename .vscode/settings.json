@@ -2,6 +2,7 @@
     "files.associations": {
         "*.cmake": "c",
         "stdio.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "generationcode.h": "c"
     }
 }
