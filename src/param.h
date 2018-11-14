@@ -1,6 +1,6 @@
-#ifndef __COEUR__
-#define __COEUR__
+#ifndef __PARAM__
+#define __PARAM__
 
-void coeur5();
+const int choix = 4;
 
 #endif
