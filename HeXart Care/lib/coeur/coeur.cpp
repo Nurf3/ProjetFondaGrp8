@@ -34,7 +34,7 @@ void coeur::coeur2()
     }
 }
 
-//Eteindre toutes les LEDs
+//Eteindre toutes les LEDs allumées
 void coeur::coeur2_low()
 {
     for (i = 2; i <= 11; i += 2)
@@ -52,7 +52,7 @@ void coeur::coeur3()
     }
 }
 
-//Eteindre toutes les LEDs
+//Eteindre toutes les LEDs allumées
 void coeur::coeur3_low()
 {
     for (i = 2; i <= 11; i += 3)
@@ -124,5 +124,45 @@ void coeur::coeur5()
         digitalWrite(i, LOW);
         i++;
         j++;
+    }
+}
+
+//Allumer une LED sur deux (en mode alternatif) à chaque battement
+void coeur::coeur6()
+{
+    if (tour == 0)
+    {
+        for (i = 2; i <= 11; i += 2)
+        {
+            digitalWrite(i, HIGH);
+        }
+    }
+    else
+    {
+        for (i = 3; i <= 11; i += 2)
+        {
+            digitalWrite(i, HIGH);
+        }
+    }
+}
+
+//Eteindre toutes les LEDs allumées
+void coeur::coeur6_low()
+{
+    if (tour == 0)
+    {
+        for (i = 2; i <= 11; i += 2)
+        {
+            digitalWrite(i, LOW);
+        }
+        tour = 1;
+    }
+    else
+    {
+        for (i = 3; i <= 11; i += 2)
+        {
+            digitalWrite(i, LOW);
+        }
+        tour = 0;
     }
 }

@@ -130,7 +130,7 @@ void coeur::coeur5()
 //Allumer une LED sur deux (en mode alternatif) à chaque battement
 void coeur::coeur6()
 {
-    if (test == 0)
+    if (tour == 0)
     {
         for (i = 2; i <= 11; i += 2)
         {
@@ -149,13 +149,13 @@ void coeur::coeur6()
 //Eteindre toutes les LEDs allumées
 void coeur::coeur6_low()
 {
-    if (test == 0)
+    if (tour == 0)
     {
         for (i = 2; i <= 11; i += 2)
         {
             digitalWrite(i, LOW);
         }
-        test = 1;
+        tour = 1;
     }
     else
     {
@@ -163,6 +163,6 @@ void coeur::coeur6_low()
         {
             digitalWrite(i, LOW);
         }
-        test = 0;
+        tour = 0;
     }
 }
