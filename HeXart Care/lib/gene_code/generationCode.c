@@ -14,7 +14,7 @@ void generationCode(int choix)
     FILE *fichier = NULL;
 
     //Ouverture du fichier param.h en mode écrirture
-    fichier = fopen("src/param.h", "w");
+    fichier = fopen("lib/gene_Code/param.h", "w");
 
     //Vérification si le fichier c'est bien ouvert
     if (fichier != NULL)
