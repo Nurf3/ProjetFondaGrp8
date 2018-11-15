@@ -5,6 +5,7 @@
 #ifndef __GENE__
 #define __GENE__
 
+/*-----------------------------------------Prototype fonction generationCode---------------------------------------*/
 void generationCode(int choix);
 
 #endif

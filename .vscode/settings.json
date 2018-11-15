@@ -3,6 +3,7 @@
         "*.cmake": "c",
         "stdio.h": "c",
         "stdlib.h": "c",
-        "generationcode.h": "c"
+        "generationcode.h": "c",
+        "coeur.h": "c"
     }
 }
