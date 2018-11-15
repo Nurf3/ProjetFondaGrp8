@@ -21,21 +21,27 @@ void cardio::mesure(int temps)
 	}
 
 	//Le choix est lu dans le fichier param.h grâce à une variable globale
-	if (choix == 1)
+	switch (choix)
 	{
-		coeur2.coeur1_low(); //éteint les LED pour le choix 1
-	}
-	else if (choix == 2)
-	{
+	case 1:
+		coeur2.coeur1_low(); //allume les LED pour le choix 1
+		break;
+
+	case 2:
 		coeur2.coeur2_low();
-	}
-	else if (choix == 3)
-	{
+		break;
+
+	case 3:
 		coeur2.coeur3_low();
-	}
-	else if (choix == 6)
-	{
+		break;
+
+	case 6:
 		coeur2.coeur6_low();
+		break;
+
+	default:
+		Serial.println("Erreur de choix");
+		break;
 	}
 
 	//tant que le voltage lu est inférieure à 2.5V :
@@ -61,14 +67,21 @@ void cardio::mesure(int temps)
 	case 3:
 		coeur2.coeur3();
 		break;
+
 	case 4:
 		coeur2.coeur4();
 		break;
+
 	case 5:
 		coeur2.coeur5();
 		break;
+
 	case 6:
 		coeur2.coeur6();
+		break;
+
+	default:
+		Serial.println("Erreur de choix");
 		break;
 	}
 

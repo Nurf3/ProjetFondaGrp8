@@ -34,7 +34,7 @@ void coeur::coeur2()
     }
 }
 
-//Eteindre toutes les LEDs
+//Eteindre toutes les LEDs allumées
 void coeur::coeur2_low()
 {
     for (i = 2; i <= 11; i += 2)
@@ -52,7 +52,7 @@ void coeur::coeur3()
     }
 }
 
-//Eteindre toutes les LEDs
+//Eteindre toutes les LEDs allumées
 void coeur::coeur3_low()
 {
     for (i = 2; i <= 11; i += 3)
@@ -127,6 +127,7 @@ void coeur::coeur5()
     }
 }
 
+//Allumer une LED sur deux (en mode alternatif) à chaque battement
 void coeur::coeur6()
 {
     if (test == 0)
@@ -145,6 +146,7 @@ void coeur::coeur6()
     }
 }
 
+//Eteindre toutes les LEDs allumées
 void coeur::coeur6_low()
 {
     if (test == 0)
