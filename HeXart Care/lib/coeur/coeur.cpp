@@ -167,6 +167,7 @@ void coeur::coeur6_low()
     }
 }
 
+//Allumer en mode chenille accélérer
 void coeur::coeur7()
 {
     for (i = 2; i <= 11; i++)
