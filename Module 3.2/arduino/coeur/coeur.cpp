@@ -126,3 +126,41 @@ void coeur::coeur5()
         j++;
     }
 }
+
+void coeur::coeur6()
+{
+    if (test == 0)
+    {
+        for (i = 2; i <= 11; i += 2)
+        {
+            digitalWrite(i, HIGH);
+        }
+    }
+    else
+    {
+        for (i = 3; i <= 11; i += 2)
+        {
+            digitalWrite(i, HIGH);
+        }
+    }
+}
+
+void coeur::coeur6_low()
+{
+    if (test == 0)
+    {
+        for (i = 2; i <= 11; i += 2)
+        {
+            digitalWrite(i, LOW);
+        }
+        test = 1;
+    }
+    else
+    {
+        for (i = 3; i <= 11; i += 2)
+        {
+            digitalWrite(i, LOW);
+        }
+        test = 0;
+    }
+}

@@ -9,19 +9,22 @@
 /*---------------------------------------------Prototype des fonctions LED----------------------------------------*/
 class coeur
 {
-public:
+  public:
 	void coeur1();
 	void coeur2();
 	void coeur3();
 	void coeur4();
 	void coeur5();
+	void coeur6();
 	void coeur1_low();
 	void coeur2_low();
 	void coeur3_low();
+	void coeur6_low();
 
-private:
+  private:
 	int i = 2;
 	int j = 3;
+	int tour = 0;
 };
 
 #endif //ARDUINO_COEUR_H
