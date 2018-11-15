@@ -21,7 +21,7 @@ void generationCode(int choix)
     {
         //Ecriture dans le fichier la constante choix avec la strcuture adéquat (#ifndef,...)
         //Puis fermeture du fichier
-        fprintf(fichier, "#ifndef __MODULE__\n#define __MODULE__\n\nconst int utilisation = %d;\n\n#endif", choix);
+        fprintf(fichier, "#ifndef __MODULE__\n#define __MODULE__\n\nconst int choix = %d;\n\n#endif", choix);
         fclose(fichier);
     }
 
