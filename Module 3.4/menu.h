@@ -7,6 +7,7 @@
 /*----------------PROTOTYPES DES FONCTIONS----------------*/
 
 void MenuPrincipal(void);
+void NoticeUtilisateur(void);
 void MenuChoixLED(void);
 void MenuActionsFichier(void);
 
