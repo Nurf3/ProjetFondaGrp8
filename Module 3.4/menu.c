@@ -81,6 +81,10 @@ void MenuChoixLED()
     {
         MenuPrincipal();
     }
+    else
+    {
+        printf("Veuillez choisir un chiffre entre 0 à 6");
+    }
 }
 
 void MenuActionsFichier()
