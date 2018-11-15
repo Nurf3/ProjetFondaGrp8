@@ -10,42 +10,88 @@ void MenuPrincipal()
 {
     /*------------------------------------------VARIABLES MENU------------------------------------------*/
 
+    void MenuPrincipal()
+{
+    /*------------------------------------------VARIABLES MENU------------------------------------------*/
+
     int menu; //variable qui va nous permettre de gérer l'affichage du menu
 
     /*------------------------------------------AFFICHAGE MENU------------------------------------------*/
 
-    printf("Entrez une valeur pour menu \n");
+    printf("\t\tProjet HeXart Care - Un coeur qui bat au rythme de vos reves\n");
     printf("\n");
-    printf("0 : Quitter le menu \n");
-    printf("1 : Menu du choix d'allumage des LED\n");
-    printf("2 : Menu du choix d'actions sur le fichier\n");
+    printf("\t\t\t\t\tMenu principal\n");
     printf("\n");
+    printf ("Entrez une valeur pour menu \n");
+    printf("\n");
+    printf ("0 : Quitter l'application\n");
+    printf ("1 : Notice d'utilisation\n");
+    printf ("2 : Menu du choix d'allumage des LED\n");
+    printf ("3 : Menu du choix d'actions sur le fichier\n");
+    printf ("\n");
 
     /*------------------------------------FONCTIONS ET ACTIONS DU MENU------------------------------------*/
 
-    scanf("%d", &menu); //demande la valeur de la variable du menu
+    scanf ("%d", &menu); //demande la valeur de la variable du menu
     printf("Vous avez choisi la valeur %d pour le menu\n", menu);
     printf("\n");
 
-    switch (menu)
+    switch(menu)
     {
-    case 0: //valeur qui ne correspond pas à une fonction, elle correspond à une sortie de programme
-        printf("Sortie du menu\n");
-        printf("\n");
-        exit(EXIT_SUCCESS);
-        break;
+        case 0 : //valeur qui ne correspond pas à une fonction, elle correspond à une sortie de programme
+            printf("Sortie de l'application\n");
+            printf("\n");
+            exit(EXIT_SUCCESS);
+            break;
 
-    case 1:
-        printf("Redirection vers le menu de choix du fonctionnement des LED\n");
-        printf("\n");
-        MenuChoixLED();
-        break;
+        case 1 : 
+            printf("Redirection vers la notice d'utilisation\n");
+            printf("\n");
+            NoticeUtilisation(); 
+            break;
 
-    case 2:
-        printf("Redirection vers le menu d'interaction avec le fichier\n");
-        printf("\n");
-        MenuActionsFichier();
-        break;
+        case 2 : 
+            printf("Redirection vers le menu de choix du fonctionnement des LED\n");
+            printf("\n");
+            MenuChoixLED(); 
+            break;
+
+        case 3 : 
+            printf("Redirection vers le menu d'interaction avec le fichier\n"); 
+            printf("\n");
+            MenuActionsFichier();
+            break;
+    }
+}
+    
+void NoticeUtilisation()
+{
+    /*------------------------------------------VARIABLES MENU------------------------------------------*/
+
+    int quitter;
+
+    /*------------------------------------------AFFICHAGE MENU------------------------------------------*/
+
+    printf ("\t\t\tNotice d'utilisation de l'outil HeXart Care\n");
+    printf ("\n");
+    printf ("\t Cet outil vous est propose par le groupe 8 du centre CESI Exia de Strasbourg\n");
+    printf ("\t     COSTEIRA Jaime \t AMARY Clement \t KLEIN Lucien \t GIRARDI Guillaume \t\n");
+    printf ("\n");
+    printf ("1 - Choisissez une configuration pour l'affichage de vos LED dans le menu principal\n");
+    printf ("2 - Mettez votre doigt en place dans la pince\n");
+    printf ("3 - Allez sur le programme Arduino\n");
+    printf ("4 - Televersez le programme\n");
+    printf ("5 - Attendez un certain temps afin que les mesures se fassent\n");
+    printf ("6 - Retirez votre doigt de la pince\n");
+    printf ("7 - Retournez sur le programme C et allez dans le menu d'actions\n");
+    printf ("8 - Selectionnez les actions que vous voulez réaliser\n");
+    printf ("\n");
+
+    printf ("Entrez la valeur 0 pour quitter cette notice\n");
+    scanf ("%d", &quitter);
+    if (quitter == 0);
+    {
+        MenuPrincipal();
     }
 }
 
@@ -57,7 +103,7 @@ void MenuChoixLED()
 
     /*------------------------------------------AFFICHAGE MENU------------------------------------------*/
 
-    printf("Entrez une valeur pour le type d'allumage des LED \n");
+    printf("\t\t\t\tEntrez une valeur pour le type d'allumage des LED \n");
     printf("\n");
     printf("0 : Quitter le menu \n");
     printf("1 : Clignotement de toutes les LED\n");
@@ -82,6 +128,11 @@ void MenuChoixLED()
     {
         MenuPrincipal();
     }
+    else
+    {
+        printf("ERREUR, retour au menu principal\n");
+        MenuPrincipal();
+    }
 }
 
 void MenuActionsFichier()
@@ -92,7 +143,9 @@ void MenuActionsFichier()
     int x;    //variable du pouls dans la file
 
     /*------------------------------------------AFFICHAGE MENU------------------------------------------*/
-
+    
+    printf("\t\t\t\tMenu du choix des actions\n");
+    printf("\n");
     printf("Entrez une valeur pour menu \n");
     printf("\n");
     printf(" 0 : Quitter le menu \n");
