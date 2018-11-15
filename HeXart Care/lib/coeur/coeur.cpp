@@ -166,3 +166,13 @@ void coeur::coeur6_low()
         tour = 0;
     }
 }
+
+void coeur::coeur7()
+{
+    for (i = 2; i <= 11; i++)
+    {
+        digitalWrite(i, HIGH);
+        delay(20);
+        digitalWrite(i, LOW);
+    }
+}

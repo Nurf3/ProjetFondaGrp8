@@ -80,6 +80,10 @@ void cardio::mesure(int temps)
 		coeur2.coeur6();
 		break;
 
+	case 7:
+		coeur2.coeur7();
+		break;
+
 	default:
 		Serial.println("Erreur de choix");
 		break;

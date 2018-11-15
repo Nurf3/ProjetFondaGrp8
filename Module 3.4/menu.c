@@ -65,7 +65,8 @@ void MenuChoixLED()
     printf("3 : Clignotement de 1 LED sur 3\n");
     printf("4 : Clignotement en chenille\n");
     printf("5 : Clignotement en chenille avec effet de fondu\n");
-    printf("6 : clignotement de 1 LED sur 2 alternatif\n");
+    printf("6 : Clignotement de 1 LED sur 2 en mode alternatif\n");
+    printf("7 : Clignotement en chenille boucle\n");
     printf("\n");
 
     /*------------------------------------FONCTIONS ET ACTIONS DU MENU------------------------------------*/
@@ -73,17 +74,13 @@ void MenuChoixLED()
     scanf("%d", &choix); //demande la valeur de la variable du menu
     printf("Vous avez choisi la valeur %d pour le menu\n", choix);
     printf("\n");
-    if (choix > 0 && choix < 7)
+    if (choix > 0 && choix < 8)
     {
         generationCode(choix);
     }
     else if (choix == 0)
     {
         MenuPrincipal();
-    }
-    else
-    {
-        printf("Veuillez choisir un chiffre entre 0 à 6");
     }
 }
 
