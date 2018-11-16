@@ -3,28 +3,31 @@
 #include <string.h>
 #include "actions.h"
 
+// "atoi" permet de convertir un string en int
+// "strtok" nous permet de séparer une chaîne de charactères en tokens grâce à un délimiteur (ici ";" )
+
 /*--------------------------------FONCTION AFFICHER DONNEES--------------------------------*/
 
 void AfficherDonnees()
 {
-    FILE *fp = fopen("Battements.csv", "r+");
+    FILE *fp = fopen("Battements.csv", "r+"); //Ouverture du fichier .csv : Battements enregistré avec le programme .pde
 
-    if (fp == NULL){
+    if (fp == NULL){ //Mesure de sécurité si jamais le fichier est inexistant
         fclose(fp);
         exit(1);
     }
 
-    char donnees[100];
+    char donnees[100]; //Creation d'un tableau donnees contenant 100 char
     printf("Donnees     Temps\n");
-    while (fgets(donnees, 100, fp) != NULL)
+    while (fgets(donnees, 100, fp) != NULL) //Temps que la lecture du fichier n'arrive pas à la fin de celui-ci :
     {
-        printf("[%d]", atoi(strtok(donnees, ";")));
+        printf("[%d]", atoi(strtok(donnees, ";"))); //Affiche le contenu de la ligne avant le point-virgule
         printf("\t");
-        printf("    [%d]\n", atoi(strtok(NULL, ";")));
+        printf("    [%d]\n", atoi(strtok(NULL, ";"))); //Affiche le contenu de la ligne avant le point-virgule
     }
     printf("\n");
 
-    fclose(fp);
+    fclose(fp); //Fermeture du fichier
 }
 
 /*--------------------------------FONCTION MAX POULS--------------------------------*/
@@ -50,10 +53,10 @@ void MaxPouls()
         deuxieme_colonne = atoi(strtok(NULL, ";"));
 
 
-        if (premiere_colonne>max)
+        if (premiere_colonne>max) //Dès que la valeur du pouls est supérieure à la précédente :
         {
-            max = premiere_colonne;
-            tps = deuxieme_colonne;
+            max = premiere_colonne; //On attribue à la var max la valeur du pouls
+            tps = deuxieme_colonne; //On attribue à la var tps le temps associé au pouls
         }
 
     }
@@ -85,10 +88,10 @@ void MinPouls()
         premiere_colonne = atoi(strtok(donnees, ";"));
         deuxieme_colonne = atoi(strtok(NULL, ";"));
 
-          if (premiere_colonne<min)
+          if (premiere_colonne<min) //Dès que la valeur du pouls est inférieure à la précédente :
         {
-            min = premiere_colonne;
-            tps = deuxieme_colonne;
+            min = premiere_colonne; //On attribue à la var min la valeur du pouls
+            tps = deuxieme_colonne; //On attribue à la var tps le temps associé au pouls
         }
 
     }
@@ -114,7 +117,7 @@ void RecherchePouls()
     }
 
     printf("A quel temps voulez-vous connaitre la pulsation? \t");
-    scanf("%d", &tpsrech);
+    scanf("%d", &tpsrech); //On attribue à la var tpsrech le temps saisi par l'utilisateur pour trouver le pouls correspondant
     printf("\n");
 
     int premiere_colonne, deuxieme_colonne;
@@ -126,10 +129,10 @@ void RecherchePouls()
         premiere_colonne = atoi(strtok(donnees, ";"));
         deuxieme_colonne = atoi(strtok(NULL, ";"));
 
-        if (tpsrech == deuxieme_colonne)
+        if (tpsrech == deuxieme_colonne) //Si le temps recherché est le même que le fichier a trouvé lors de sa lecture :
         {
-            printf("Temps: [%d]\n", deuxieme_colonne);
-            printf("Pouls: [%d]\t \n", premiere_colonne);
+            printf("Temps: [%d]\n", deuxieme_colonne); //On affiche le temps
+            printf("Pouls: [%d]\t \n", premiere_colonne); //Et le pouls correspondant
             printf("\n");
         }
 
@@ -153,7 +156,7 @@ void RechercheTemps()
     }
 
     printf("A quelle pulsation voulez-vous connaitre le temps? \t");
-    scanf("%d", &pulsrech);
+    scanf("%d", &pulsrech); //On attribue à la valeur pulsrech le pouls saisi par l'utilisateur dont il veut savoir le temps correspondant
     printf("\n");
 
     int premiere_colonne, deuxieme_colonne;
@@ -165,10 +168,10 @@ void RechercheTemps()
         premiere_colonne = atoi(strtok(donnees, ";"));
         deuxieme_colonne = atoi(strtok(NULL, ";"));
 
-        if (pulsrech == premiere_colonne)
+        if (pulsrech == premiere_colonne) //Si le pouls saisi est le même que le pouls
         {
-            printf("Pouls: [%d]\n", premiere_colonne);
-            printf("Temps: [%d]\t \n", deuxieme_colonne);
+            printf("Pouls: [%d]\n", premiere_colonne); //On affiche la valeur du pouls
+            printf("Temps: [%d]\t \n", deuxieme_colonne); //Et le temps associé
             printf("\n");
         }
 
@@ -203,18 +206,18 @@ void MoyennePouls()
         deuxieme_colonne = atoi(strtok(NULL, ";"));
 
 
-        total = total + atoi(strtok(donnees, ";"));
+        total = total + atoi(strtok(donnees, ";")); //Ceci calcule la somme des pouls entre eux
 
-        nb_elem++;
+        nb_elem++; //On compte le nombre d'elements dans le fichier csv (correspond au nombre de lignes)
 
     }
 
-    moyenne = total / nb_elem ;
+    moyenne = total / nb_elem ; //Calcul de la moyenne
 
-    printf("La somme de l'ensemble des pouls est : [%f].\n", total);
-    printf("Nous avons egalement [%f] elements.\n", nb_elem);
+    printf("La somme de l'ensemble des pouls est : [%f].\n", total); //Affichage du pouls total (somme)
+    printf("Nous avons egalement [%f] elements.\n", nb_elem); //Affichage du nombre d'éléments totaux
     printf("\n");
-    printf("La moyenne du pouls est donc: [%f] .\n", moyenne);
+    printf("La moyenne du pouls est donc: [%f] .\n", moyenne); //Affichage de la moyenne
 
     fclose(fp);
 }
@@ -235,26 +238,27 @@ void TriPoulsCroissant()
     int tps, premiere_colonne, deuxieme_colonne;
     int nb_elem = 0;
 
+    //Initialisation des tab et des var
     char donnees[100];
     int tab[100];
     int i = 0;
     int j = 0;
     int temp, tri;
 
-        while (fgets(donnees, 100, fp) != NULL)
+        while (fgets(donnees, 100, fp) != NULL) //Lecture du fichier
         {
             premiere_colonne = atoi(strtok(donnees, ";"));
             deuxieme_colonne = atoi(strtok(NULL, ";"));
 
-            tab[i] = premiere_colonne;
-            i++;
-            nb_elem++;
+            tab[i] = premiere_colonne; //On insère la valeur lue à un certain indice du tableau
+            i++; //Qui change ici à chaque ligne (++)
+            nb_elem++; //Comptage du nombre d'éléments nous permettra d'afficher par la suite les membres du tableau
         }
 
     do
     {
         tri = 0;
-        for(i=1;i<nb_elem-j;i++)
+        for(i=1;i<nb_elem-j;i++) //Tri à bulles
         {
             if(tab[i-1]>tab[i])
             {
@@ -268,7 +272,7 @@ void TriPoulsCroissant()
     }
     while(tri);
 
-    for (i=0;i<nb_elem;i++)
+    for (i=0;i<nb_elem;i++) //Affichage du tableau
     {
         printf("[%d]\n", tab[i]);
     }
