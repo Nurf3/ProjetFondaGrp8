@@ -92,18 +92,7 @@ void cardio::mesure(int temps)
 	//permet la lecture de données pour le programme sur processing
 	Serial.print(calcul_pouls(temporaire), 0);
 	Serial.print(";");
-	
-	secondes = millis()/1000; //convect millisecondes en secondes
-	minutes=secondes/60; //convertir secondes en minutes
-	heures=minutes/60; //convertir minutes en heures
-
-	secondes=secondes-(minutes*60); // soustraire les secondes converties afin d'afficher 59 secondes max
-	minutes=minutes-(heures*60);    //soustraire les minutes converties afin d'afficher 59 minutes max
-	Serial.print(heures);
-	Serial.print(":");
-	Serial.print(minutes);
-	Serial.print(":");
-	Serial.println(secondes);
+	Serial.println(millis());
 
 	//permet la lecture de données pour le programme PLX-DAQ
 	/*Serial.print("DATA,TIME,");
