@@ -17,9 +17,6 @@ class cardio
   private:									//fonctions et variables interne à cette librairie
     float valeur;							//valeur lu par l'arduino au pin A0
     float temporaire;							//différence de temps entre deux battements
-    long heures=0;
-    long minutes=0;
-    long secondes=0;
 };
 
 #endif //ARDUINO_CARDIO_H
